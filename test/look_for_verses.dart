@@ -1,6 +1,4 @@
 import 'package:bible_agent/helpers/api/fba.swagger.dart';
-import 'package:chopper/chopper.dart';
-import 'package:http/http.dart' as http;
 import 'package:dio/dio.dart' as d;
 import 'package:enough_convert/enough_convert.dart';
 import 'package:html/dom.dart';

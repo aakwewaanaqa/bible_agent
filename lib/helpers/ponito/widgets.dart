@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 extension StringExt on String {
@@ -10,15 +11,32 @@ extension StringExt on String {
 typedef OnKeyEvent = KeyEventResult Function(FocusNode, KeyEvent);
 
 extension WidgetExt on Widget {
-  Widget scrollable() {
+  GestureDetector gesture() {
+    return GestureDetector(child: this);
+  }
+
+  MouseRegion hover({
+    PointerEnterEventListener? onEnter,
+    PointerExitEventListener? onExit,
+    PointerHoverEventListener? onHover,
+  }) {
+    return MouseRegion(
+      onEnter: onEnter,
+      onExit: onExit,
+      onHover: onHover,
+      child: this,
+    );
+  }
+
+  SingleChildScrollView scrollable() {
     return SingleChildScrollView(child: this);
   }
 
-  Widget expand() {
+  Expanded expand() {
     return Expanded(child: this);
   }
 
-  Widget container({
+  Container container({
     Decoration? decoration,
     double? width,
     double? height,
@@ -33,11 +51,11 @@ extension WidgetExt on Widget {
     );
   }
 
-  Widget pad({EdgeInsetsGeometry? padding}) {
+  Padding pad({EdgeInsetsGeometry? padding}) {
     return Padding(padding: padding ?? EdgeInsets.all(8.0), child: this);
   }
 
-  Widget focus({OnKeyEvent? onKeyEvent}) {
+  Focus focus({OnKeyEvent? onKeyEvent}) {
     return Focus(onKeyEvent: onKeyEvent, child: this);
   }
 }

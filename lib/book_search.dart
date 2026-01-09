@@ -113,7 +113,7 @@ class _BookSearchState extends State<BookSearch> {
           return const SizedBox.shrink();
         }
 
-        return BibleBookKey.bookKeys
+        return BibleBookKey.keys
             .where((k) {
               return k.displayString.toLowerCase().contains(
                 input.toLowerCase(),
