@@ -1,6 +1,6 @@
 import 'package:bible_agent/helpers/ponito/fluent.dart';
 import 'package:bible_agent/helpers/ponito/widgets.dart';
-import 'package:bible_agent/models/bible.dart';
+import 'package:domain/index.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
@@ -113,13 +113,13 @@ class _BookSearchState extends State<BookSearch> {
           return const SizedBox.shrink();
         }
 
-        return BibleBookKey.keys
+        return BibleBookSearchKey.keys
             .where((k) {
               return k.displayString.toLowerCase().contains(
                 input.toLowerCase(),
               );
             })
-            .mapI((i, k) {
+            .mapi((i, k) {
               final isSelected = i == index;
               final selectedColor = CupertinoColors.systemBlue;
               final defaultColor = CupertinoColors.label;
@@ -138,7 +138,7 @@ class _BookSearchState extends State<BookSearch> {
                   );
             })
             .toList()
-            .let((l) {
+            .so((l) {
               bloc.model.suggestionLength.value = l.length;
               return l;
             })

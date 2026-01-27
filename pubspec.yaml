@@ -45,6 +45,9 @@ dependencies:
   chopper: ^8.0.3
   json_annotation: ^4.9.0
 
+  domain:
+    path: ./domain
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,0 +1,22 @@
+name: domain
+description: Data models and utilities for Bible indexing/search.
+version: 0.0.1
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  dio: ^5.9.0
+  enough_convert: ^1.6.0
+  html: ^0.15.6
+  # --- Swagger Codegen API ---
+  chopper: ^8.0.3
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  test: ^1.25.6
+
+  # --- Swagger Codegen API ---
+  build_runner: ^2.4.9
+  chopper_generator: ^8.0.3
+  json_serializable: ^6.8.0
+  swagger_dart_code_generator: ^3.0.1

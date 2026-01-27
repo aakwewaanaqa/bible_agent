@@ -1,3 +1,4 @@
 genapi:
-	rm -rf lib/helpers/api
+	cd domain && ls . && \
+	rm -rf lib/api && \
 	dart run build_runner build

@@ -1,25 +1,6 @@
-import 'package:flutter/widgets.dart';
-
-extension Linq<T> on Iterable<T> {
-  Iterable<U> mapI<U>(U Function(int index, T value) mapper) {
-    final result = <U>[];
-    var i = 0;
-    for (final element in this) {
-      result.add(mapper(i++, element));
-    }
-    return result;
-  }
-}
+import 'index.dart';
 
 extension FluentExt<T> on T {
-  T let(T Function(T) action) {
-    return action(this);
-  }
-
-  U so<U>(U Function(T) action) {
-    return action(this);
-  }
-
   ValueNotifier<T> toState() {
     return ValueNotifier(this);
   }
